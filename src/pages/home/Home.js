@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import data from "../../data/products.json";
 import Tabs from "./sections/tabList/Tabs";
 import HomeTabContent from "./sections/tabContents/home/HomeTabContent";
-import StocksTabContent from "./sections/tabContents/stocks/StocksTabContent";
 import { Tab } from "@headlessui/react";
 
 const Home = () => {
@@ -17,9 +16,6 @@ const Home = () => {
             data={reservData}
             setData={setReservData}
           />
-        </Tab.Panel>
-        <Tab.Panel className="row-span-9 lg:row-span-7 flex flex-col space-y-6 h-full w-full">
-          <StocksTabContent data={reservData} setData={setReservData} />
         </Tab.Panel>
       </div>
     </Tab.Group>
