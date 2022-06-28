@@ -2,7 +2,8 @@ import React from "react";
 import { Tab } from "@headlessui/react";
 
 const tabs = [
-  { index: "1", name: "Normal Kullanıcı" },
+  { index: "1", name: "Anasayfa" },
+  { index: "2", name: "Film Türleri"},
 ];
 
 const Tabs = () => {
