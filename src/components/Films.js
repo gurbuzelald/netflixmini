@@ -42,7 +42,7 @@ const Films = (props) => {
 
   return (
     <div className="row-span-2 lg:row-span-3 flex h-full max-h-full overflow-hidden">
-      <div className="card relative h-full max-h-full overflow-hidden w-1/2 mr-14">
+      <div className="card relative h-full max-h-full overflow-hidden w-full">
         <div className="flex items-center justify-between shrink-0 h-12 lg:h-14 w-full px-4 lg:px-6 rounded-t-lg">
           <h2 className="text-sm lg:text-lg font-medium text-gray-800">
             <strong>FİLMLER</strong>
