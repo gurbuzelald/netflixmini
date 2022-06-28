@@ -1,9 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FilmList from "./FilmList";
+import UpdateForm from "./UpdateForm";
+import DialogModal from "./ui/Dialog";
 import { SearchIcon } from "@heroicons/react/solid";
 const Films = (props) => {
   const [filteredData, setFilteredData] = useState(props.data);
   const [searchKey, setSearchKey] = useState("");
+
+  const [selected, setSelected] = useState(null);
+  const [tableData, setTableData] = useState([]);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [formData, setFormData] = useState({});
+
+  useEffect(() => {
+    setFormData(selected);
+  }, [selected]);
+
+  useEffect(() => {
+    setTableData(props.data);
+  }, [props.data]);
 
   // arama alanina girilen keyword'e gore filmleri filtreler
   const handleChange = (value) => {
@@ -19,6 +34,10 @@ const Films = (props) => {
     } else {
       setFilteredData(props.data);
     }
+  };
+  const handleOpenUpdateDialog = (item) => {
+    setSelected(item);
+    setIsDialogOpen(true);
   };
 
   return (
@@ -54,6 +73,44 @@ const Films = (props) => {
           />
         </div>
       </div>
+
+      <tbody className="divide-y divide-gray-200">
+            {tableData &&
+              tableData.length > 0 &&
+              tableData.map((item, index) => (
+                <tr className="odd:bg-gray-100 even:bg-gray-50" key={item.id}>
+                  <td className="px-3 py-4 text-center text-sm text-gray-500">
+                    {index + 1}
+                  </td>
+                  <td className="w-full max-w-0 px-3 py-4 text-sm font-medium text-gray-800 sm:w-auto sm:max-w-none">
+                    {item.isim}
+                  </td>
+                  <td className="flex justify-center space-x-3 px-3 py-4 text-sm">
+                    <button
+                      type="button"
+                      onClick={() => handleOpenUpdateDialog(item)}
+                      className="lg:border lg:border-green-600 text-green-500 lg:text-green-600 lg:rounded-lg lg:px-2 lg:py-1 bg-transparent"
+                    >
+                      <span className="lg:block">Detail</span>
+                    </button>
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+
+      <DialogModal
+        title="Film Details"
+        text={<UpdateForm data={formData} setData={setFormData} />}
+        buttons={[
+          {
+            label: "Detail",
+            color: "green",
+          },
+        ]}
+        icon={{ color: "green" }}
+        show={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+      />
 
       
     </div>
