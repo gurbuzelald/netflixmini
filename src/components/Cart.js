@@ -1,5 +1,4 @@
 import React from "react";
-import CartTable from "./CartTable";
 import SelectedItem from "./SelectedItem";
 
 const Cart = (props) => {
@@ -13,7 +12,6 @@ const Cart = (props) => {
         detail={props.detail}
         setDetail={props.setDetail}
       />
-      <CartTable itemsAddedToCart={props.itemsAddedToCart} />
     </div>
     
   );
