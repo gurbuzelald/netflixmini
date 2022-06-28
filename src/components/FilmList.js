@@ -28,6 +28,12 @@ const FilmList = (props) => {
                   : `bg-gray`
               } relative group h-12 w-full  border rounded-lg transition-all duration-100 ease-in-out bg-green-300`}
             >
+              <div
+              style={{
+                backgroundImage: `url('${film.gorsel}')`,
+              }}
+              className="h-full w-full bg-center bg-cover cursor-pointer scale-90 group-hover:scale-100 transition-transform duration-200 ease-in-out"
+            />
               <div className="flex justify-between items-end cursor-pointer h-20 pl-1 pb-3.5 absolute bottom-0 left-0 right-0 rounded-b-md bg-gradient-to-b from-transparent to-gray-900/70 text-gray-100">
                 <strong className="text-xs justify-center">{film.isim}</strong>
               </div>
