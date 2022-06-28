@@ -2,7 +2,13 @@
   "products": [
     {
       "isim": "Godfather",
-      "detail": "2011"
+      "detail": "Imdb nin en iyi dizisi",
+      "gorsel": "https://avatars.mds.yandex.net/i?id=2a00000179f7ab8ce01238de494a111b6cec-4772468-images-thumbs&n=13"
+    },
+    {
+      "isim": "Titanic",
+      "detail": "1997 de çekildi",
+      "gorsel": "https://www.themoviethemesong.com/wp-content/uploads/2014/04/Titanic-Theme-Song-2.jpg"
     }
   ]
   
