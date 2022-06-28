@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FilmList from "./FilmList";
-import UpdateForm from "./UpdateForm";
+import DetailForm from "./DetailForm";
 import DialogModal from "./ui/Dialog";
 import { SearchIcon } from "@heroicons/react/solid";
 const Films = (props) => {
@@ -100,7 +100,7 @@ const Films = (props) => {
 
       <DialogModal
         title="Film Details"
-        text={<UpdateForm data={formData} setData={setFormData} />}
+        text={<DetailForm data={formData} setData={setFormData} />}
         buttons={[
           {
             label: "Detail",
