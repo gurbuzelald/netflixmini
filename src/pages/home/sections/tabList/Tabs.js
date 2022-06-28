@@ -3,7 +3,6 @@ import { Tab } from "@headlessui/react";
 
 const tabs = [
   { index: "1", name: "Normal Kullanıcı" },
-  { index: "2", name: "Super Kullanıcı" },
 ];
 
 const Tabs = () => {
