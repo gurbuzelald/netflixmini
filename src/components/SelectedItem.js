@@ -15,6 +15,12 @@ const SelectedItem = (props) => {
               <div className="lg:hidden lg:h-full w-full rounded-lg bg-white">
                 {props.selected ? (
                   <div className="flex items-center justify-center space-x-3 lg:h-10 w-full rounded-lg bg-gray-200">
+                    <div
+                      style={{
+                        backgroundImage: `url('${props.selected.gorsel}')`,
+                      }}
+                      className="h-full w-16 aspect-square shrink-0 bg-cover rounded-l-lg"
+                    />
                     <div className="truncate text-sm text-gray-800">
                     <span className="text-xs">{props.selected.isim}</span>
                     </div>
@@ -28,9 +34,15 @@ const SelectedItem = (props) => {
               <div className="hidden lg:block h-36 w-full rounded-lg">
                 {props.selected ? (
                   <div className="relative group lg:justify-center lg:items-center h-36 w-full overflow-hidden rounded-lg bg-white">
+                    <div
+                      style={{
+                        backgroundImage: `url('${props.selected.gorsel}')`,
+                      }}
+                      className="h-full w-full bg-none bg-center bg-cover cursor-pointer scale-90 group-hover:scale-100 transition-transform duration-200 ease-in-out"
+                    />
                     <div className="h-full w-full bg-none bg-center bg-cover cursor-pointer scale-90 group-hover:scale-100 transition-transform duration-200 ease-in-out" />
                     <div className="flex justify-between items-end h-20 px-4 pb-3 absolute bottom-0 left-0 right-0 rounded-b-lg bg-gradient-to-b from-transparent to-gray-900/70 text-gray-100">
-                      <span className="text-sm text-center">{props.selected.isim}</span>
+                      <span className="text-sm text-center">{props.selected.detail}</span>
                     </div>
                   </div>
                 ) : (
